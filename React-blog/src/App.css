@@ -1,71 +1,84 @@
-\/* Reset */
+/* Reset */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "Inter", sans-serif;
 }
 
-/* Navbar container */
+/* Body */
+body {
+  background: #f5f7fb; /* soft light grey-blue */
+  color: #1e293b;
+}
+
+/* ================= NAVBAR ================= */
 .navbar {
-  background: linear-gradient(90deg, #0f172a, #1e293b);
+  background: #ffffff;
   padding: 16px 40px;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.nav-list {
   display: flex;
   justify-content: center;
-  gap: 35px;
-  align-items: center;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  gap: 32px;
+  list-style: none;
 }
 
-/* Links */
 .navbar a {
-  color: #e2e8f0;
+  color: #475569;
   text-decoration: none;
-  font-size: 17px;
+  font-size: 15px;
   font-weight: 500;
-  letter-spacing: 0.5px;
-  position: relative;
-  transition: all 0.3s ease;
+  transition: 0.2s ease;
 }
 
-/* Hover effect */
+/* subtle hover */
 .navbar a:hover {
-  color: #38bdf8;
+  color: #2563eb; /* calm blue */
 }
 
-/* Underline animation */
-.navbar a::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -6px;
-  width: 0%;
-  height: 2px;
-  background-color: #38bdf8;
-  transition: width 0.3s ease;
+/* ================= GRID ================= */
+.container {
+  padding: 30px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 24px;
 }
 
-.navbar a:hover::after {
+/* ================= CARD ================= */
+.card {
+  background: #ffffff;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid #e2e8f0;
+  transition: 0.25s ease;
+}
+
+/* subtle hover (no aggressive animation) */
+.card:hover {
+  transform: translateY(-4px);
+  border-color: #cbd5f5;
+}
+
+/* Image */
+.card img {
   width: 100%;
+  height: 170px;
+  object-fit: cover;
 }
 
-/* Active link (if using NavLink) */
-.active {
-  color: #38bdf8;
+/* Title */
+.card h2 {
+  font-size: 15px;
+  padding: 12px;
+  line-height: 1.4;
 }
 
-.active::after {
-  width: 100%;
-}
-
-/* Responsive (mobile) */
-@media (max-width: 768px) {
-  .navbar {
-    flex-wrap: wrap;
-    gap: 20px;
-    padding: 12px 20px;
-  }
-
-  .navbar a {
-    font-size: 15px;
-  }
+/* Description */
+.card p {
+  font-size: 13px;
+  color: #64748b;
+  padding: 0 12px 12px;
 }
