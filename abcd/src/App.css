@@ -1,0 +1,13 @@
+.main-header{
+  height : 80px;
+  background-color: antiquewhite;
+  color:black;
+  box-shadow:0px 0px 5px 5px grey;
+  display:flex;
+  justify-content: space-around;
+  
+}
+
+ul{
+  display:flex;
+}
