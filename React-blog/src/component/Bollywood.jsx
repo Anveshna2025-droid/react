@@ -1,18 +1,21 @@
 import React from 'react'
 import Data from '../Data'
+import { Link } from 'react-router-dom';
 
 const Bollywood = () => {
-  const bollywoodData = Data.filter(
-    (item) => item.category === "Bollywood"
-  )
+
+  const BollywoodData = Data.filter((item)=>item.category==="Bollywood");
+  console.log(BollywoodData)
 
   return (
-    <div className="container">
-      {bollywoodData.map((item) => (
-        <div className="card" key={item.id}>
-          <img src={item.img_url} alt={item.title} />
-          <h2>{item.title}</h2>
-        </div>
+    <div>
+      {BollywoodData.map((bollydata)=>(
+        <>
+        <Link to={`/details/${bollydata.id}`}>
+          <h1>{bollydata.title}</h1>
+         <img src={bollydata.img_url}/>
+         </Link>
+         </>
       ))}
     </div>
   )
