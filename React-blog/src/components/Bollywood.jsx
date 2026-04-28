@@ -7,18 +7,17 @@ const Bollywood = () => {
   const BollywoodData = Data.filter((item)=>item.category==="Bollywood");
   console.log(BollywoodData)
 
-  return (
-    <div>
-      {BollywoodData.map((bollydata)=>(
-        <>
+return (
+  <div className="bollywood-container">
+    {BollywoodData.map((bollydata) => (
+      <div className="card" key={bollydata.id}>
         <Link to={`/details/${bollydata.id}`}>
+          <img src={bollydata.img_url} alt="" />
           <h1>{bollydata.title}</h1>
-         <img src={bollydata.img_url}/>
-         </Link>
-         </>
-      ))}
-    </div>
-  )
-}
+        </Link>
+      </div>
+    ))}
+  </div>
+);}
 
 export default Bollywood

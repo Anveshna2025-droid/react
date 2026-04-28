@@ -13,18 +13,15 @@ const Details = () => {
         alert("post not found")
     }
 
-    return (
-        <>
-        <button onClick={()=>navigate("/home")}>Back</button>
-            <div>Details</div>
+   return (
+  <div className="details-container">
+    <button onClick={() => navigate("/")}>Back</button>
 
-
-            <h1>{post.title}</h1>
-            <img src={post.img_url} alt="" />
-            <p>{post.description}</p>
-        </>
-
-    )
+    <h1>{post.title}</h1>
+    <img src={post.img_url} alt="" />
+    <p>{post.description}</p>
+  </div>
+);
 }
 
 export default Details
