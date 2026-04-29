@@ -8,10 +8,15 @@ import Technology from './components/Technology';
 import Fitness from './components/Fitness';
 import Food from './components/Food';
 import Details from './components/Details';
+import { useContext } from 'react';
+import { ThemeContext } from './Context/ThemeContext';
 
 const App = () => {
+
+ const {theme}=useContext(ThemeContext)
   return (
     <>
+    <div className={theme}>
       <BrowserRouter>
         <Navbar/>
         <Routes>
@@ -25,6 +30,7 @@ const App = () => {
           
         </Routes>
       </BrowserRouter>
+      </div>
 
     </>
 
